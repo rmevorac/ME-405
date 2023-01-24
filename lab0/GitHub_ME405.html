@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>GitHub_ME405</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+  
+  /*
+   * I add this to html files generated with pandoc.
+   * Modified Sep 2021 by JR to add <style> tags
+   */
+  
+  html {
+    font-size: 100%;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  body {
+    color: #444;
+    /* font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif; */
+    font-family: Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+    font-size: 12px;
+    line-height: 1.7;
+    padding: 1em;
+    margin: auto;
+    max-width: 42em;
+    background: #fefefe;
+  }
+  
+  a:link{
+    color: #0610c0;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #0b0080;
+  }
+  
+  a:hover {
+    color: #06e;
+  }
+  
+  a:active {
+    color: #faa700;
+  }
+  
+  a:focus {
+    outline: thin dotted;
+  }
+  
+  *::-moz-selection {
+    background: rgba(255, 255, 0, 0.3);
+    color: #000;
+  }
+  
+  *::selection {
+    background: rgba(255, 255, 0, 0.3);
+    color: #000;
+  }
+  
+  a::-moz-selection {
+    background: rgba(255, 255, 0, 0.3);
+    color: #0645ad;
+  }
+  
+  a::selection {
+    background: rgba(255, 255, 0, 0.3);
+    color: #0645ad;
+  }
+  
+  p {
+    margin: 1em 0;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #111;
+    line-height: 125%;
+    margin-top: 2em;
+    font-weight: normal;
+  }
+  
+  h4, h5, h6 {
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 2em;
+  }
+  
+  h3 {
+    font-size: 1.5em;
+  }
+  
+  h4 {
+    font-size: 1.2em;
+  }
+  
+  h5 {
+    font-size: 1em;
+  }
+  
+  h6 {
+    font-size: 0.9em;
+  }
+  
+  blockquote {
+    color: #666666;
+    margin: 0;
+    padding-left: 3em;
+    border-left: 0.5em #EEE solid;
+  }
+  
+  hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #eee;
+    margin: 1em 0;
+    padding: 0;
+  }
+  
+  pre, code, kbd, samp {
+    color: #000;
+    font-family: monospace, monospace;
+    _font-family: 'courier new', monospace;
+    font-size: 0.90em;
+  }
+  
+  pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  b, strong {
+    font-weight: bold;
+  }
+  
+  dfn {
+    font-style: italic;
+  }
+  
+  ins {
+    background: #ff9;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  mark {
+    background: #ff0;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+  }
+  
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  ul, ol {
+    margin: 1em 0;
+    padding: 0 0 0 2em;
+  }
+  
+  li p:last-child {
+    margin-bottom: 0;
+  }
+  
+  ul ul, ol ol {
+    margin: .3em 0;
+  }
+  
+  dl {
+    margin-bottom: 1em;
+  }
+  
+  dt {
+    font-weight: bold;
+    margin-bottom: .8em;
+  }
+  
+  dd {
+    margin: 0 0 .8em 2em;
+  }
+  
+  dd:last-child {
+    margin-bottom: 0;
+  }
+  
+  img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+  }
+  
+  figure {
+    display: block;
+    text-align: center;
+    margin: 1em 0;
+  }
+  
+  figure img {
+    border: none;
+    margin: 0 auto;
+  }
+  
+  figcaption {
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 0 0 .8em;
+  }
+  
+  table {
+    margin-bottom: 2em;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  
+  table th {
+    padding: .2em 1em;
+    background-color: #eee;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+  }
+  
+  table td {
+    padding: .2em 1em;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    vertical-align: top;
+  }
+  
+  .author {
+    font-size: 1.2em;
+    text-align: center;
+  }
+  
+  @media only screen and (min-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  @media print {
+    * {
+      background: transparent !important;
+      color: black !important;
+      filter: none !important;
+      -ms-filter: none !important;
+    }
+  
+    body {
+      font-size: 12pt;
+      max-width: 100%;
+    }
+  
+    a, a:visited {
+      text-decoration: underline;
+    }
+  
+    hr {
+      height: 1px;
+      border: 0;
+      border-bottom: 1px solid black;
+    }
+  
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+  
+    abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+  
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+      content: "";
+    }
+  
+    pre, blockquote {
+      border: 1px solid #999;
+      padding-right: 1em;
+      page-break-inside: avoid;
+    }
+  
+    tr, img {
+      page-break-inside: avoid;
+    }
+  
+    img {
+      max-width: 100% !important;
+    }
+  
+    @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+  }
+  
+    @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+  }
+  
+    p, h2, h3 {
+      orphans: 3;
+      widows: 3;
+    }
+  
+    h2, h3 {
+      page-break-after: avoid;
+    }
+  }
+  </style>
+</head>
+<body>
+<h1 id="using-git-in-me405">Using Git in ME405</h1>
+<p>Git is the most popular Source Control Management (SCM) program at this time. It has approximately eleventy zillion useful features, of which we will use about eight in ME405.</p>
+<p><img src="git-overview.png" title="Overview of Git process used to synchronize code on Alice&#39;s and Bönsputt&#39;s computers" /></p>
+<p>The diagram above shows an overview of how files are exchanged between multiple teammates’ computers and a cloud repository such as GitHub™.</p>
+<ul>
+<li><p>The files you’re actively editing are in a <strong>working directory</strong> on your PC.</p></li>
+<li><p>You should edit files in the working directory, then run them using Thonny and copy them to the MicroPython board as needed. This is done as regular copying of files. <em>It is not a good idea to edit files directly on the MicroPython board.</em></p></li>
+<li><p>The <strong>local repository</strong> is managed by a Git program and contains a set of “snapshots” of your software at various points in time. You <strong>stage</strong> and <strong>commit</strong> changes periodically; this makes a new snapshot of important files in your working directory and saves that snapshot in the local repository.</p></li>
+<li><p>When appropriate, you <strong>push</strong> snapshots from your local repository to the repository server in The Cloud.</p></li>
+<li><p>When changes have been made to your project on another computer such as your teammate’s, you should <strong>pull</strong> those changes into your local repository and working directory. If you’ve both made changes at the same time, you may need to <strong>merge</strong> your changes.</p></li>
+</ul>
+<p>If you have already installed Git tools for another course, you may continue to use those. However, giving the recommended ME405 tools a try is a good idea.</p>
+<h2 id="install-and-configure-git">Install and Configure Git</h2>
+<p>If you’ve already installed Git, you can probably skip this section.</p>
+<ul>
+<li><p>Go to <a href="https://git-scm.com/download" class="uri">https://git-scm.com/download</a> and install the correct version for your OS.</p></li>
+<li><p>Open a terminal (or PowerShell, or whatever your system calls it) and type the command</p>
+<p><code>git config --global user.name "</code><em>username</em><code>"</code></p>
+<p>where <em>username</em> is whatever name you have chosen to identify yourself (it does not have to be your actual name).</p>
+<p>You <em>may</em> want to set your Git email address at this time, but you may also want to <em>not</em> set your email until you get a special address from GitHub which won’t get you spammed.</p>
+<p><code>git config --global user.email "</code><em>name@server.net</em><code>"</code></p></li>
+</ul>
+<h2 id="set-up-your-github-account">Set up Your GitHub Account</h2>
+<ul>
+<li><p>Go to <a href="https://github.com" class="uri">https://github.com</a> and set up a GitHub account.</p>
+<p><em><strong>Note:</strong> You are not required nor requested to use your actual name for the account, nor to make any personally identifying information visible in your GitHub repository.</em></p></li>
+</ul>
+<h2 id="install-a-git-client">Install a Git Client</h2>
+<p>If you’re already using SourceTree and actually like it, you may continue to use that. Otherwise, <strong>GitHub Desktop</strong> is a relatively easy to use Git graphical interface which is recommended. If you go on to professional work with large projects, a more fully featured client will be better, but for learning Git with small mechatronics projects, this client is a good choice.</p>
+<ul>
+<li><p>Go to <a href="https://desktop.github.com/" class="uri">https://desktop.github.com/</a> and download a version for your operating system.</p></li>
+<li><p>Although Linux isn’t listed by GitHub, there’s a script for Ubuntu at <a href="https://gist.github.com/berkorbay/6feda478a00b0432d13f1fc0a50467f1" class="uri">https://gist.github.com/berkorbay/6feda478a00b0432d13f1fc0a50467f1</a> which allows the program to be installed on a Debian-based Linux box. More information is at <a href="https://github.com/shiftkey/desktop" class="uri">https://github.com/shiftkey/desktop</a>.</p></li>
+</ul>
+<h2 id="add-local-repository-to-your-github-account">Add Local Repository to your GitHub Account</h2>
+<p>It is assumed that you have already created a local Git repository – that is, a repository for your project on your computer – and made some commits to it. The following instructions are for GitHub Desktop:</p>
+<ul>
+<li><p>Choose <code>File -&gt; Add local repository...</code> and choose the folder in which your project files are. It’s best to choose the top-level project directory, the one containing your <code>src</code> and <code>docs</code> directories.</p></li>
+<li><p>Add and commit any files which should be pushed to GitHub. It’s most important to add <code>src/*.py</code> and all files in <code>docs</code>.</p></li>
+<li><p>Choose <code>Repository -&gt; Repository settings...</code></p></li>
+<li><p>Check the <code>Git config</code> to verify that you’re using the name and email which you prefer for your GitHub account.</p></li>
+<li><p>Go back to <code>Remote</code> and click the <code>Publish</code> button.</p></li>
+<li><p>Change the name if desired. Add a meaningful description. Uncheck the <code>Keep this code private</code> button unless you need to restrict access (you’ll have to specifically authorize your instructor to access your repository if it’s private).</p></li>
+<li><p>Click the <code>Publish Repository</code> button and authenticate if necessary. If you use the same Internet provider I do, this may take a few tries.</p></li>
+<li><p>If you need to change GitHub repository settings, it’s most easily done using the <code>Settings</code> tab on the repository web page.</p></li>
+<li><p>This might be a good time to add a <code>README.md</code> page for your repository. Create it in the top-level directory, edit it on your local computer, add it in GitHub Desktop, commit the change(s), and use <code>Repository -&gt; Push</code> to push the changes to the GitHub remote repository. <code>README.md</code> is written in Markdown syntax, which is really easy to learn:</p>
+<p><a href="https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax" class="uri">https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax</a></p></li>
+</ul>
+<!--
+## Optional: Add Extra GitHub Support to VSCode
+VSCode works with Git out of the box, but the GitHub folks have added an extension
+that makes working with the Hub easier.
+
+* Open the `Extensions` category in the left window pane (the pile of
+  boxes with one box floating away because it's full of helium).
+  
+* Search for `github pull requests`.
+
+* Install the extension named `GitHub Pull Requests and Issues` (it's the one 
+  which is published by GitHub, not some other author(s)).
+-->
+<h2 id="set-up-github-web-pages">Set Up <!--Doxygen to Make--> GitHub Web Pages</h2>
+<p>This is a streamlined way to get your Doxygen generated documentation onto the Web. Each time you run Doxygen, then stage and commit and push changes, your documentation will be updated along with your source code.</p>
+<p>If you’ve made a portfolio in ME305, this is a bit different: You’ll have one repository with its own set of documentation for each lab exercise, not a big portfolio with all your documents.</p>
+<!--* Configure Doxygen to put the generated documentation files in a folder called
+  `docs` which is next to the `src` and other folders in your main project
+  folder. 
+
+* If you're hand editing `Doxyfile`, search for setting `HTML_OUTPUT` and set
+  it equal to `docs`. 
+  
+* If using the Doxygen GUI, go to the **Expert** tab, choose the **HTML**
+  topic, and set the `HTML_OUTPUT` setting to `docs`.  Then make sure that
+  the **Destination directory** in the **Wizard** tab's Project topic is
+  set to your main project directory. 
+-->
+<ul>
+<li><p>Make sure you have configured Doxygen according to the instructions in the <strong>Setting Up Doxygen</strong> page on Canvas.</p></li>
+<li><p>Run Doxygen and make sure your folder called <code>docs</code> is filled with many files.</p></li>
+<li><p>Stage (add) the entire <code>/docs</code> folder full of files and commit that change. Most Git GUI programs will stage the changed files automatically. You can commit document changes at the same time as code changes.</p></li>
+<li><p>Push your changes to GitHub.</p></li>
+<li><p>Go to your project’s main site on GitHub (you should see <strong>yourname/ProjectName</strong> at the top). Click the <strong>Settings</strong> tab at upper right. Choose the <strong>Pages</strong> category at left. Set the source branch to <strong>master</strong> and select the folder <code>/docs</code>. Save your choices.</p>
+<p><em><strong>Important:</strong> It may take up to 20 minutes (according to the GitHub folks) before your documentation becomes visible in a Web browser, so don’t worry if you get some <strong>404</strong> errors for a while.</em></p></li>
+<li><p>See also <a href="https://docs.github.com/en/pages" class="uri">https://docs.github.com/en/pages</a>.</p></li>
+</ul>
+</body>
+</html>
