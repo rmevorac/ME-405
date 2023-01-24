@@ -1,11 +1,53 @@
+"""	!@file		Lab0Main
+    @brief		Increases the brightness of an LED over 5 seconds and resets it when it hits 5 seconds.
+    
+    @author		Ben Elkayam
+    @author		Sean Wahl
+    @author		Caleb Erlenborn
+    @date		January 12 2023
+
+
+"""
+
 import pyb
 
-print ("Hello, Milky Way")                  # A comment
-print ("The answer is {:d}".format (42))
-for count in range (12):
-    print (count)          # Must get indentation right
+
+def led_setup ():
+    """!@brief Sets up the LED pin and timers
+        @return Returns the timmer channel object
 
 
-pinC0 = pyb.Pin(pyb.Pin.board.PC0, pyb.Pin.OUT_PP)
-pinC0.high()
-pinC0.low()
+"""
+    ## Pin that the LED is feeding into
+    #
+    pinA0 = pyb.Pin (pyb.Pin.board.PA0, pyb.Pin.OUT_PP)
+    ## Timer created to run the LED change of time
+    #
+    tim2 = pyb.Timer (2, freq=20000)
+    ## The PWM channel that controls the LED brightness
+    #
+    ch1 = tim2.channel (1, pyb.Timer.PWM_INVERTED, pin = pinA0)
+    return ch1
+
+def led_brightness (t):
+    """!@brief Calculates the brightness in % that the LED should be set to
+        @return LED brightness in percent"""
+    ## LED brightness in %
+    #
+    ledb = t/50
+    return ledb
+
+if __name__ == "__main__":
+    
+    ##A returned copy of the PWM object to change LED brightness
+    #
+    ch1m = led_setup()
+    ##initial relative time for system countup
+    #
+    tInit = pyb.millis()
+    while True:
+        ## Current time difference between refrence time and present time
+        #
+        cTime = pyb.millis() - tInit
+        ch1m.pulse_width_percent(led_brightness(cTime%5000))
+           
